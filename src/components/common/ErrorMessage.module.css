@@ -1,0 +1,24 @@
+.alertMessage {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    background-color: #fff6d0;
+    flex-direction: column;
+
+}
+
+.alertMessage span {
+    position: absolute;
+    left: 1rem;
+
+}
+
+.alertMessage p {
+    text-align: center;
+    font-family: Helvetica;
+
+}

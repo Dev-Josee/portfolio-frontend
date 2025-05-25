@@ -1,0 +1,47 @@
+@import '../../vars.css';
+
+
+.bio_editor {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    padding: 0 0.6rem;
+    background-color: var(--bg-color-about);
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.bio_text {
+    width: 100%;
+
+}
+
+.bio_text textarea {
+    width: 100%;
+
+    background-color: var(--bg-color-about);
+    color: var(--text-color--global);
+    font-size: 1rem;
+    font-family: Helvetica;
+    border: none;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    resize: none;
+}
+
+.bio_atual {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bio_atual p {
+    font-size: 1.1rem;
+    line-height: 1.1;
+}
+

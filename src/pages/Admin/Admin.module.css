@@ -1,0 +1,28 @@
+@import '../../vars.css';
+
+.admin_page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.admin_page h1{
+    color: var(--text-color-p);
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.admin_page h2{
+    color: var(--text-color-p);
+    font-size: 2rem;
+    text-align: start;
+    font-family: Helvetica;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+
