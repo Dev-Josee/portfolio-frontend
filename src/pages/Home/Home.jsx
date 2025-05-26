@@ -30,9 +30,11 @@ const Home = () => {
                 <Gallery category="events"/>
              </div>
             </section>
+
+            
             <section>
              <div>
-                <Gallery category="empresa"/>
+                <Gallery category="corporate"/>
              </div>
             </section>
 

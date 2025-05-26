@@ -16,11 +16,11 @@ const Gallery = ({ category, showDelete = false }) => {
     const fetchPhotos = async (page = 1) => {
         try {
             setIsLoading(true);
-            const { data } = await getPhotosByCategory(category, page, 12); //12 fotos por página
+            const responseData = await getPhotosByCategory(category, page, 12); //12 fotos por página
 
-            setPhotos(data.photos);
-            setTotalPages(data.totalPages);
-            setCurrentPage(data.currentPage);
+            setPhotos(responseData.photos);
+            setTotalPages(responseData.totalPages);
+            setCurrentPage(responseData.currentPage);
             setError('');
 
 
@@ -73,8 +73,9 @@ const Gallery = ({ category, showDelete = false }) => {
                             <PhotoItem
                                 key={photo._id}
                                 photo={photo}
-                                handleDeleteChange={handleDeleteChange}
+                                onPhotoDelete={handleDeleteChange}
                                 showDelete={showDelete}
+                                
                             />
                         ))}
                     </div>
