@@ -37,6 +37,9 @@ const PhotoUpload = ({ onUpload }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        console.log('Arquivo selecionado:', file);
+    console.log('Dados do formulário:', formData);
+
         if (!file) {
             setError('Por favor, selecione uma imagem');
             return;

@@ -55,7 +55,7 @@ const Gallery = ({ category, showDelete = false }) => {
     if (error) return <ErrorMessage message={error} />;
 
 
-    returnreturn (
+    return (
     <div className={styles.galleryContainer}>
         {isLoading ? (
             <Loader />

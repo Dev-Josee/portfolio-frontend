@@ -18,14 +18,14 @@ const Admin = () => {
 
             <PhotoUpload onUpload={() => setRefreshKey(prev => prev + 1)}/>
 
-                <h2>Fotos de Eventos</h2>
+                <h2>Eventos</h2>
                 <Gallery
                     category="events"
                     showDelete
                     key={`events-${refreshKey}`}
                     />
 
-                <h2>Fotos Corporativas</h2>
+                <h2>Corporativas</h2>
                 <Gallery
                 category="corporate"
                 showDelete
