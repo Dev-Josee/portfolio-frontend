@@ -24,5 +24,22 @@
     padding: 1rem 0;
     margin-bottom: 1rem;
 }
+.gallery_section{
+    width: 100%;
+    min-height: 100dvh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
 
-
+.gallery_section h2{
+    background-color: green;
+    font-size: 1.4rem;
+    text-align: center;
+    font-family: Helvetica;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin-top: 5rem;
+    
+}

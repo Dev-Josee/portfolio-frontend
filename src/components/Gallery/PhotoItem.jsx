@@ -3,8 +3,10 @@ import { deletePhoto, API_URL } from "../../api";
 import Button from "../common/Button";
 import styles from "./Gallery.module.css";
 
-const PhotoItem = ({ photo, onPhotoDelete,showDelete }) => {
-    console.log("URL da Imagem:", photo.imageUrl); 
+
+
+const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
+    console.log("URL da Imagem:", photo.imageUrl);
     const [isDeleting, setIsDeleting] = useState(false);
 
     const handleDelete = async () => {
@@ -31,13 +33,14 @@ const PhotoItem = ({ photo, onPhotoDelete,showDelete }) => {
                     alt={photo.title || 'Foto sem titulo'}
                     loading="lazy"
                     onError={(e) => { // Adicione isso
-                    console.error("Erro ao carregar imagem:", e.target.src);}}
+                        console.error("Erro ao carregar imagem:", e.target.src);
+                    }}
                 />
+            </div>
                 <div className={styles.photo_info}>
-                    <h2>{photo.title || 'Sem título'}</h2>
+                    <h3>{photo.title || 'Sem título'}</h3>
                     {photo.description && <p>{photo.description}</p>}
                 </div>
-            </div>
 
             {showDelete && (
                 <div className={styles.photo_actions}>
@@ -45,7 +48,7 @@ const PhotoItem = ({ photo, onPhotoDelete,showDelete }) => {
                         variant="danger"
                         onClick={handleDelete}
                         disabled={isDeleting}>
-                            
+
                         {isDeleting ? 'Excluindo...' : 'Excluir'}
                     </Button>
                 </div>

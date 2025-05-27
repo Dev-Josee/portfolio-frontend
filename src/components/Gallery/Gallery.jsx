@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getPhotosByCategory } from "../../api";
 import PhotoItem from "./PhotoItem";
+
 import Pagination from "../common/Pagination";
 import Loader from "../common/Loader";
 import ErrorMessage from "../common/ErrorMessage";

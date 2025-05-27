@@ -27,6 +27,7 @@ const Home = () => {
 
             <section className={styles.sectionGallery}>
              <div>
+                <h3>Eventos</h3>
                 <Gallery category="events"/>
              </div>
             </section>
@@ -34,6 +35,7 @@ const Home = () => {
             
             <section>
              <div>
+                <h3>Corporativo</h3>
                 <Gallery category="corporate"/>
              </div>
             </section>
