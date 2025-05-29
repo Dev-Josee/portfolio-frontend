@@ -9,16 +9,15 @@ import LoginAdmin from "./components/LoginForm/auth/LoginAdmin.jsx";
 import styles from './App.module.css';
 
 const isAuthenticated = () => {
-  return localStorage.getItem('acessToken') ? true : false;
+  return localStorage.getItem('accessToken') ? true : false;
 
 }
-
-/*  if (!isAuthenticated()){
+const ProtectRoute = ({ children }) => {
+  if (!isAuthenticated()) {
     return <Navigate to="/login" replace />
   }
   return children;
-}*/
-
+};
 
 function App() {
   return (
@@ -31,19 +30,17 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<Events />} />
             <Route path="/empresa" element={<Empresa />} />
-
-
             <Route path="/admin" element={
-              
+              <ProtectRoute>
                 <Admin />
-              
+              </ProtectRoute>
             }
             />
           </Routes>
         </main>
         <footer className={styles.app_footer}>
           <div className={styles.footer_content}>
-            <p>&copy; {new Date().getFullYear()} Edlane Moura - Fotógrafa Profissional. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Feedhi. Todos os direitos reservados.</p>
 
           </div>
 
