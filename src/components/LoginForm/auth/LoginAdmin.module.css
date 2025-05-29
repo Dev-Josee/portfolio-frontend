@@ -1,0 +1,91 @@
+.logincontainer {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 1rem;
+    background-color: #7c6543;
+}
+.logincontainer p{
+    color: #ececec;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.TitleLogin{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #ececec;
+    margin-bottom: 1rem;
+    
+}
+form{
+    width: 100%;
+    height:45%;
+
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.formGroup{
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.formGroup label{
+    color: #dddddd;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-family: Helvetica;
+    
+}
+.formGroup input{
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #ececec;
+    color: #333333;
+}
+
+.formGroup input:focus{
+    border: 2px solid #dbdbdb;
+    box-shadow: 0 0 5px rgba(124, 101, 67, 0.5);
+}
+
+
+
+
+.Plogin{
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    color: #ececec;
+    text-align: center;
+    letter-spacing: -0.1px;
+}
+
+
+.toggleButton{
+    background-color: white;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-28%);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.toggleButton:hover{
+    transform: scale3d(1.1, 1, 1);
+    background-color: #ececec;
+    box-shadow: #32325d40 0px 30px 60px -12px, #0000009a 0px 18px 36px -18px;
+    
+}

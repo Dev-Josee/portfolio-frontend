@@ -7,8 +7,14 @@ const LoginAdmin = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword)
+    }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -49,8 +55,11 @@ const LoginAdmin = () => {
     return (
         <div className={styles.logincontainer}>
             <h2 className={styles.TitleLogin}>
-               Oi, Dih! Faça o login para aceesar o painel
+                Oi, Dih!
             </h2>
+            <p className={styles.Plogin}>
+                Faça o login para aceesar o painel
+            </p>
 
             {message && <p className={styles.message}>{message}</p>}
 
@@ -58,24 +67,34 @@ const LoginAdmin = () => {
                 <div className={styles.formGroup}>
                     <label htmlFor="username">Usuário:</label>
                     <input
-                    type="text"
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUserName(e.target.value)}
-                    required
-                    className={styles.input}
+                        type="text"
+                        id="username"
+                        value={username}
+                        onChange={(e) => setUserName(e.target.value)}
+                        required
+                        className={styles.input}
                     />
                 </div>
                 <div className={styles.formGroup}>
                     <label htmlFor="password">Senha:</label>
-                    <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    className={styles.input}
-                    />
+                    <div className={styles.passwordContainer}>
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className={styles.input}
+                        />
+                        <button
+                            type="button"
+                            onClick={togglePasswordVisibility}
+                            className={styles.toggleButton}
+                        >
+                            {showPassword ? '🙈' : '👁️'}
+                        </button>
+                    </div>
+                   
                 </div>
                 <button type="submit" className={styles.button}>Entrar</button>
             </form>
@@ -83,7 +102,7 @@ const LoginAdmin = () => {
 
 
 
-            
+
         </div>
     )
 
