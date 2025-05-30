@@ -1,9 +1,10 @@
 import React from "react";
+
 import BioViewer from "../../components/Bioviewer/BioViewer"
 import ContactForm from '../../components/ContactForm/ContactForm';
 import styles from "./Home.module.css";
 
-import Lane from "../../assets/img/lane.jpg"
+
 import Gallery from "../../components/Gallery/Gallery";
 
 

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
 import Header from "./components/Header/Header.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Events from "./pages/Events/Events.jsx";
 import Admin from "./pages/Admin/Admin.jsx";
 import Empresa from "./pages/Empresa/Empresa.jsx";
 import LoginAdmin from "./components/LoginForm/auth/LoginAdmin.jsx";
+import LottieScreen from "./components/common/LoaderScreen.jsx";
 import styles from './App.module.css';
 
 const isAuthenticated = () => {
@@ -20,34 +22,49 @@ const ProtectRoute = ({ children }) => {
 };
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [])
+
   return (
     <Router>
-      <div className={styles.app}>
-        <Header />
-        <main className={styles.main_content}>
-          <Routes>
-            <Route path="/login" element={<LoginAdmin />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/empresa" element={<Empresa />} />
-            <Route path="/admin" element={
-              <ProtectRoute>
-                <Admin />
-              </ProtectRoute>
-            }
-            />
-          </Routes>
-        </main>
-        <footer className={styles.app_footer}>
-          <div className={styles.footer_content}>
-            <p>&copy; {new Date().getFullYear()} Feedhi. Todos os direitos reservados.</p>
+      {isLoading ? (
+        <LottieScreen />
+      ) : (
+        <div className={styles.app}>
 
-          </div>
+          <Header />
+          <main className={styles.main_content}>
+            <Routes>
+              <Route path="/login" element={<LoginAdmin />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/empresa" element={<Empresa />} />
+              <Route path="/admin" element={
+                <ProtectRoute>
+                  <Admin />
+                </ProtectRoute>
+              }
+              />
+            </Routes>
+          </main>
+          <footer className={styles.app_footer}>
+            <div className={styles.footer_content}>
+              <p>&copy; {new Date().getFullYear()} Feedhi. Todos os direitos reservados.</p>
 
-        </footer>
-      </div>
+            </div>
 
+          </footer>
+        </div>
+
+      )}
     </Router>
+
   )
 };
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { uploadPhoto } from '../../api';
 import Button from '../common/Button';
 import ErrorMessage from '../common/ErrorMessage';
-import Loader from '../common/Loader';
+import Loader from '../common/LoaderScreen';
 import styles from './PhotoUpload.module.css';
 
 const PhotoUpload = ({ onUpload }) => {

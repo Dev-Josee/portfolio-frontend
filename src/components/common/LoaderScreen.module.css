@@ -1,0 +1,25 @@
+@import '../../vars.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Parisienne&family=Tangerine&display=swap');
+
+.loaderContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loaderContainer .LoaderText {
+    margin-top: -5rem;
+    font-family: "Parisienne", cursive;
+    font-size: 5rem;
+    font-weight: lighter;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 2rem 4rem;
+}

@@ -3,7 +3,7 @@ import { getPhotosByCategory } from "../../api";
 import PhotoItem from "./PhotoItem";
 
 import Pagination from "../common/Pagination";
-import Loader from "../common/Loader";
+import LottieScreen from "../../components/common/LoaderScreen.jsx";
 import ErrorMessage from "../common/ErrorMessage";
 import styles from "./Gallery.module.css";
 
@@ -52,14 +52,14 @@ const Gallery = ({ category, showDelete = false }) => {
     setPhotos(prevPhotos => prevPhotos.filter(photo => photo._id !== deletedPhotoId));
 };
 
-    if (isLoading) return <Loader />
+  
     if (error) return <ErrorMessage message={error} />;
 
-
+   
     return (
     <div className={styles.galleryContainer}>
         {isLoading ? (
-            <Loader />
+            <LottieScreen/>
         ) : error ? (
             <ErrorMessage message={error} />
         ) : (

@@ -9,6 +9,9 @@ const LoginAdmin = () => {
     const [message, setMessage] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
+
+
+
     const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
@@ -50,15 +53,19 @@ const LoginAdmin = () => {
             setMessage('Erro ao conectar com o servidor. Tente novamente mais tarde.');
 
         }
+
     };
 
+
     return (
+
         <div className={styles.logincontainer}>
+
             <h2 className={styles.TitleLogin}>
                 Oi, Dih!
             </h2>
             <p className={styles.Plogin}>
-                Faça o login para aceesar o painel
+                Faça o login para acessar o painel
             </p>
 
             {message && <p className={styles.message}>{message}</p>}
@@ -94,20 +101,15 @@ const LoginAdmin = () => {
                             {showPassword ? '🙈' : '👁️'}
                         </button>
                     </div>
-                   
                 </div>
                 <button type="submit" className={styles.button}>Entrar</button>
             </form>
-
-
-
-
-
-        </div>
+            </div >
+    
     )
-
-
 }
+    
 
+   
 
 export default LoginAdmin;
