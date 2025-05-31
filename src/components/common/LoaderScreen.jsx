@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import Lottie from "lottie-react";
 import Loader from "../../assets/animations/LoaderFeedhi.json"
-import styles from "./LoaderScreen.module.css";
+import styles from "../../components/common/LoaderScreen.module.css";
 
 
 
