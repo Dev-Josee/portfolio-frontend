@@ -1,4 +1,6 @@
 @import '../../vars.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Parisienne&family=Tangerine&display=swap');
+
 
 .home_page {
     width: 100%;
@@ -64,10 +66,12 @@
 
 .sectionGallery {
     width: 100%;
-
+    
     display: flex;
+    flex-direction: column;
     position: relative;
     margin-top: 1.2rem;
+    margin-bottom: 4rem;
 
 }
 
@@ -79,5 +83,25 @@
     flex-direction: column;
     margin-top: 1.2rem;
     padding: 0 1rem;
+
+}
+
+.sectionGallery h3 {
+    font-size: 4rem;
+    text-align: center;
     
+    font-family: "Parisienne", cursive;
+    padding: 1.6rem 0;
+    letter-spacing: 2px;
+    line-height: 2;
+    color: transparent;
+
+    background: linear-gradient(75deg, #fce87b, #b88b1b, #8f6805);
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
 }

@@ -24,6 +24,7 @@ const LottieScreen = ({onAnimationCompete}) => {
       <Lottie
       lottieRef={lottieRef}
       animationData={Loader}
+      
       loop={true}
       autoplay={true}
       onComplete={() =>{
