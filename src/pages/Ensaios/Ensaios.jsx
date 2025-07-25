@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Gallery from "../../components/Gallery/Gallery";
-import styles from "./Empresa.module.css";
+import styles from "./Ensaios.module.css";
 
-const Empresa = () => {
+const Ensaios = () => {
 
     const [showFilters, setShowFilters] = useState(false);
     const [filter, setFilter] = useState('all');
@@ -16,11 +16,11 @@ const Empresa = () => {
     return (
         <div className={styles.empresa_all} >
             <div className={styles.empresa_page}>
-                <h1 className={styles.title_empresa}>Empresarial</h1>
-                <Gallery category="corporate"/>
+                <h1 className={styles.title_empresa}>Ensaios</h1>
+                <Gallery category="ensaios"/>
             </div>
         </div>
     )
 }
 
-export default Empresa;
+export default Ensaios;

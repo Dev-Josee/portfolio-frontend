@@ -6,7 +6,7 @@
 }
 
 .photoGrid {
-    background-color: var(--bg-color-galery);
+    background-color:#fff5eb;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 
@@ -22,7 +22,7 @@
     color: #242424;
     padding: 32px 0;
 
-    background-color: rgb(255, 226, 188);
+    background-color: #4f402b;
 }
 
 .photo_item {
@@ -30,17 +30,17 @@
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    border: 1px solid #ddd;
+    border: 1px solid #6c4909;
     padding: 0.4rem;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
-    margin-top: 1rem;
+    margin-top: 1.6rem;
 
 }
 
 .photo_wrapper {
     width: 100%;
-    height: 220px;
+    height: 190px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -54,14 +54,16 @@
 .photo_wrapper img {
     width: 100%;
     height: 100%;
+    cursor: pointer;
     border-radius: 6px;
     object-fit: cover;
     object-position: center center;
     display: block;
-    transition: all 0.3s ease-in;
+    transition: transform 0.3s ease-in-out;
 }
 
 .photo_wrapper:hover img {
+    
     transform: scale(1.2);
 }
 

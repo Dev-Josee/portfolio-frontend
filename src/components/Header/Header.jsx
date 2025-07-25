@@ -14,7 +14,7 @@ const Header = () => {
 
                     <Link to="/events" className={styles.nav_link}>Eventos</Link>
 
-                    <Link to="/empresa" className={styles.nav_link}>Empresarial</Link>
+                    <Link to="/ensaios" className={styles.nav_link}>Ensaios</Link>
 
                 </nav>
             </div>

@@ -38,7 +38,7 @@ const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
                 />
             </div>
                 <div className={styles.photo_info}>
-                    <h3>{photo.title || 'Sem título'}</h3>
+                    <h3>{photo.title || ''}</h3>
                     {photo.description && <p>{photo.description}</p>}
                 </div>
 

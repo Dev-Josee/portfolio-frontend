@@ -5,7 +5,7 @@ import Header from "./components/Header/Header.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Events from "./pages/Events/Events.jsx";
 import Admin from "./pages/Admin/Admin.jsx";
-import Empresa from "./pages/Empresa/Empresa.jsx";
+import Ensaios from "./pages/Ensaios/Ensaios.jsx";
 import LoginAdmin from "./components/LoginForm/auth/LoginAdmin.jsx";
 import LottieScreen from "./components/common/LoaderScreen.jsx";
 import styles from './App.module.css';
@@ -44,7 +44,7 @@ function App() {
               <Route path="/login" element={<LoginAdmin />} />
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/empresa" element={<Empresa />} />
+              <Route path="/ensaios" element={<Ensaios />} />
               <Route path="/admin" element={
                 <ProtectRoute>
                   <Admin />
