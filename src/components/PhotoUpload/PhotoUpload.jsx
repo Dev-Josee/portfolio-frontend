@@ -104,7 +104,8 @@ const PhotoUpload = ({ onUpload }) => {
                         disabled={isUploading}
                     >
                         <option value="events">Eventos</option>
-                        <option value="corporate">Empresarial</option>
+                        <option value="ensaios">Ensaios</option>
+                        
                     </select>
                 </div>
                 <div className={styles.form_group}>

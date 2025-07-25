@@ -29,11 +29,11 @@ const Admin = () => {
                 key={`events-${refreshKey}`}
             />
 
-            <h2 className={styles.corporate}>Corporativas</h2>
+            <h2 className={styles.corporate}>Ensaios</h2>
             <Gallery
-                category="corporate"
+                category="ensaios"
                 showDelete
-                key={`corporats${refreshKey}`}
+                key={`ensaios${refreshKey}`}
             />
             </section>
 

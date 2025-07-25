@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 import BioViewer from "../../components/Bioviewer/BioViewer"
 import ContactForm from '../../components/ContactForm/ContactForm';
 import styles from "./Home.module.css";
 
-
+import gsap from "gsap";
 import Gallery from "../../components/Gallery/Gallery";
 
 
+
 const Home = () => {
+
+useLayoutEffect(() =>{
+    const elementsToAnimate = gsap.utils.toArray(
+        `.${styles.about}, .${styles.sectionGallery}> div, .${styles.contact_section}`
+    )
+    gsap.set(elementsToAnimate, {
+        x: -200,
+        autoAlpha: 0,
+    })
+
+    gsap.to(elementsToAnimate,{
+        x: 0,
+        autoAlpha: 1,
+        duration: 1.5,
+        delay: 0.5,
+        stagger: 0.2,
+        ease: "power2.out"
+    })
+
+    
+})
+
+
+
+
+
+
 
     return (
         <div className={styles.home_page}>
@@ -35,7 +63,7 @@ const Home = () => {
                 <div>
                     <h3>Ensaios</h3>
                     <p>Ensaios especiais que contam histórias através de imagens, criando memórias que durarão para sempre.</p>
-                    <Gallery category="corporate" />
+                    <Gallery category="ensaios" />
                 </div>
 
             </section>

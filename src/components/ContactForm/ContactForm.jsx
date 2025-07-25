@@ -25,7 +25,7 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.email || !formData.message) {
+        if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
             setError('Todos os campos são obrigatórios');
             return;
         }
@@ -43,7 +43,7 @@ const ContactForm = () => {
             const encodedMessage = encodeURIComponent(whatsappMessage);
 
             // Cria a URL correta
-            const whatsappUrl = `https://wa.me/5581994972525?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/558198267478?text=${encodedMessage}`;
 
             console.log("URL gerada:", whatsappUrl); // Para debug
 
@@ -75,7 +75,7 @@ const ContactForm = () => {
                         <span className={styles.icon}>
                             <i><svg width="20" height="20" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 1 .252-.326c.272-.2.637-.217.93-.057a17.568 17.568 0 0 1 7.168 7.168c.16.293.143.658-.057.93a.678.678 0 0 1-.326.252l-2.29.764a.678.678 0 0 1-.746-.174l-1.516-1.516a12.683 12.683 0 0 0 5.516 5.516l1.516-1.516a.678.678 0 0 1 .746-.174l2.29.764a.678.678 0 0 1 .326.252c.2.272.217.637.057.93a17.568 17.568 0 0 1-7.168 7.168c-.293.16-.658.143-.93-.057a.678.678 0 0 1-.252-.326l-.764-2.29a.678.678 0 0 1 .174-.746l1.516-1.516a12.683 12.683 0 0 0-5.516-5.516l-1.516 1.516a.678.678 0 0 1-.746.174l-2.29-.764z" /></svg></i>
                         </span>
-                        <span className={styles.contact_text}>(81) 9999999</span>
+                        <span className={styles.contact_text}>(81) 9826-7478</span>
                     </div>
                     <div className={styles.contact_info_item}>
 
