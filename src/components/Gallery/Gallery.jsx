@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { getPhotosByCategory } from "../../api";
 import PhotoItem from "./PhotoItem";
-
+import gsap from "gsap";
 import Pagination from "../common/Pagination";
 import LottieScreen from "../../components/common/LoaderScreen.jsx";
 import ErrorMessage from "../common/ErrorMessage";
@@ -13,6 +13,9 @@ const Gallery = ({ category, showDelete = false }) => {
     const [totalPages, setTotalPages] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
+
+   
+
 
     const fetchPhotos = async (page = 1) => {
         try {
@@ -55,7 +58,8 @@ const Gallery = ({ category, showDelete = false }) => {
   
     if (error) return <ErrorMessage message={error} />;
 
-   
+
+ 
     return (
     <div className={styles.galleryContainer}>
         {isLoading ? (

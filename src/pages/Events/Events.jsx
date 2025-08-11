@@ -15,7 +15,7 @@ const Events = () => {
     return(
         <div className={styles.events_page}>
             <div className={styles.events_page_header}>
-                <h1>Eventos</h1> 
+                <h1 className={styles.title_events} >Eventos</h1> 
                 <Gallery category="events"/>               
             </div>
             

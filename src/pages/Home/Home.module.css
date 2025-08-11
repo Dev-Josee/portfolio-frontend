@@ -47,9 +47,10 @@
     width: 100%;
     height: 100%;
     background-image: url(../../assets/img/perfil.jpg);
-
-    background-position: center;
+    
     background-size: cover;
+    background-position: center;
+   
     background-repeat: no-repeat;
 }
 
@@ -89,13 +90,12 @@
 .sectionGallery h3 {
     font-size: 4rem;
     text-align: center;
-    
+
     font-family: "Parisienne", cursive;
     padding: 1.6rem 0;
     letter-spacing: 2px;
     line-height: 2;
     color: transparent;
-
     background: linear-gradient(75deg, #fce87b, #b88b1b, #8f6805);
 
     -webkit-background-clip: text;
@@ -104,4 +104,14 @@
 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
+}
+
+.sectionGallery p{
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: -0.8px;
+    padding: 0 0.6rem;
 }

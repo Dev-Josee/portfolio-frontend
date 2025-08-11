@@ -13,6 +13,8 @@
     font-size: 3rem;
     text-align: center;
     padding: 1rem 0;
+    font-family: Helvetica;
+    letter-spacing: -1.2px;
     margin-bottom: 2rem;
 }
 .admin_page h2{
@@ -23,6 +25,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     margin-bottom: 1rem;
+    letter-spacing: -1.2px;
 }
 .gallery_section{
     width: 100%;
@@ -34,7 +37,7 @@
 }
 
 .gallery_section h2{
-    background-color: green;
+    background-color:var(--bg-color-galery2);
     font-size: 1.4rem;
     text-align: center;
     font-family: Helvetica;

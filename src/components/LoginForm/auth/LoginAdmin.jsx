@@ -103,6 +103,7 @@ const LoginAdmin = () => {
                     </div>
                 </div>
                 <button type="submit" className={styles.button}>Entrar</button>
+                <a href="#esqueciminhasenha" className={styles.resetpsw}>Esqueci minha senha</a>
             </form>
             </div >
     

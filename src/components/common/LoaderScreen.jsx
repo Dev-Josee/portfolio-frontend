@@ -34,7 +34,7 @@ const LottieScreen = ({onAnimationCompete}) => {
       }}
       />
 
-      <h3 className={styles.LoaderText}>Feedhi</h3>
+      <h3 className={styles.LoaderText}>Feedih</h3>
     </div>
  )
 
