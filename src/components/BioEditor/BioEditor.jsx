@@ -46,14 +46,16 @@ const BioEditor = () => {
                         onChange={(e) => setBio(e.target.value)}
                         rows="10"
                     />
-                    <button onClick={handleSave}>Salvar</button>
-                    <button onClick={() => setEditMode(false)}>Cancelar</button>
+                    <div className={styles.btns}>
+                    <button className={styles.btnsave} onClick={handleSave}>Salvar</button>
+                    <button className={styles.btncancel}  onClick={() => setEditMode(false)}>Cancelar</button>
+                    </div>
                 </div>
             ) : (
 
                 <div className={styles.bio_atual}>
                     <p>{bio}</p>
-                    <button onClick={() => setEditMode(true)}>Editar</button>
+                    <button className={styles.btnedit} onClick={() => setEditMode(true)}>Editar</button>
                 </div>
             )}
         </div>

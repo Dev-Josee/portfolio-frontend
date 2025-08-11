@@ -28,7 +28,7 @@
 
 
 .inform_contact h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     font-family: Helvetica;
     color: var(--bg-color-galery);
@@ -44,7 +44,7 @@
 }
 
 .title_primary {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     padding: 2rem 4rem;
     font-family: Helvetica;
@@ -54,8 +54,9 @@
 
 .p {
     width: 100%;
-    text-align: center;
-    padding: 0 2rem;
+    text-align: justify;
+    font-size: 1.2rem;
+    
     margin-top: -2rem;
     margin-bottom: 2rem;
 }
@@ -73,10 +74,13 @@
     color: var(--bg-color-about);
     text-align: left;
     margin-bottom: 0.4rem;
+    letter-spacing: 1.1px;
 }
 
 .atend_horario p {
     margin-top: 0.2rem;
+    color: var(--bg-color-about);
+    letter-spacing: 1.1px;
 }
 
 
@@ -87,7 +91,7 @@ form {
     gap: 1.4rem;
     padding: 10px 8px;
     border-radius: 8px;
-    background-color: whitesmoke;
+    background-color: #e0c7b8;
 }
 
 label {
@@ -99,25 +103,27 @@ label {
 }
 
 input {
-    font-size: 0.5rem;
+    font-size: 1rem;
     padding: 12px 10px;
     border: none;
     border-radius: 4px;
     outline: none;
     margin-top: 4px;
+    background-color: var(--bg-color-galery);
 }
 
 input:focus {
-    font-size: 0.7rem;
+    font-size: .9rem;
 }
 
 textarea {
-    font-size: 0.7rem;
+    font-size: 1rem;
     padding: 12px 10px;
     outline: none;
     border-radius: 4px;
     resize: none;
     margin-top: 4px;
+    background-color: var(--bg-color-galery);
 }
 
 button {

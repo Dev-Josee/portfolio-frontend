@@ -1,24 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 import { deletePhoto, API_URL } from "../../api";
 import Button from "../common/Button";
 import styles from "./Gallery.module.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 
 const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
-    console.log("URL da Imagem:", photo.imageUrl);
+
+
+   
     const [isDeleting, setIsDeleting] = useState(false);
+
+    const photoRef = useRef();
+
+    useLayoutEffect(() => {
+        const el = photoRef.current;
+
+        gsap.fromTo(
+            el,
+            {
+                opacity: 0,
+                y: 100,
+               
+                transformOrigin: "bottom center",
+
+            },
+
+            {
+                opacity: 1,
+                y: 0,
+                
+                duration: 1,
+                ease: "power2.out",
+
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                    toggleActions: "play reverse play reverse",
+                   
+                    
+
+                },
+
+            }
+        )
+    }, [])
 
     const handleDelete = async () => {
 
-        console.log("Tentando excluir a foto:", photo._id); // Adicione isso para depuração
+   
         if (window.confirm('Tem certeza que deseja excluir?')) {
             try {
                 setIsDeleting(true)
                 await deletePhoto(photo._id);
                 onPhotoDelete(photo._id);
             } catch (err) {
-                console.error('Erro ao excluir a foto:', err)
+                
                 alert('Erro ao tentar excluir a foto');
             } finally {
                 setIsDeleting(false);
@@ -26,21 +68,21 @@ const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
         }
     }
     return (
-        <div className={styles.photo_item}>
+        <div className={styles.photo_item} ref={photoRef}>
             <div className={styles.photo_wrapper}>
                 <img
                     src={`${API_URL}${photo.imageUrl}`}
                     alt={photo.title || 'Foto sem titulo'}
                     loading="lazy"
-                    onError={(e) => { // Adicione isso
+                    onError={(e) => {
                         console.error("Erro ao carregar imagem:", e.target.src);
                     }}
                 />
             </div>
-                <div className={styles.photo_info}>
-                    <h3>{photo.title || ''}</h3>
-                    {photo.description && <p>{photo.description}</p>}
-                </div>
+            <div className={styles.photo_info}>
+                <h3>{photo.title || ''}</h3>
+                {photo.description && <p>{photo.description}</p>}
+            </div>
 
             {showDelete && (
                 <div className={styles.photo_actions}>

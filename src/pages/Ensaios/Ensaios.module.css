@@ -1,30 +1,19 @@
 @import '../../vars.css';
+.ensaio_all{
+    background-color: var(--bg-color-about);
+    text-align: center;
+    padding: 2rem 0.4rem;
+}
 
-.empresa_all {
-    width: 100%;
-    height: 100vh;
-    padding: 20px 120px;
+.ensaio_page{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    gap: 2rem;
+    height: 100dvh;
+}
 
-    .empresa_page {
-        width: 100%;
-        height: 100vh;
-        
-
-        .title_empresa {
-            text-align: center;
-            margin-top: 8%;
-            font-size: 6rem;
-            letter-spacing: 2px;
-            line-height: normal;
-            font-weight: bold;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background: linear-gradient(182deg, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
+.title_ensaio{
+    font-size: 2.4rem;
+    font-family: Helvetica;
+    letter-spacing: -1.4px;
 }

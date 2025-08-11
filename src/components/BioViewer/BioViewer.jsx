@@ -2,26 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./BioViewer.module.css";
 
-// =========================================//////////////////
-
-// GSAP//
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ExpoScaleEase, SlowMo } from "gsap/EasePack";
-    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-// ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { TextPlugin } from "gsap/TextPlugin";
-
-gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,TextPlugin,ExpoScaleEase,SlowMo);
-
-
-
-
-// =========================================//////////////////
-
-
 
 const BioViewer = () => {
 

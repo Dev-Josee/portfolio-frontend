@@ -14,9 +14,9 @@ const Ensaios = () => {
     }
 
     return (
-        <div className={styles.empresa_all} >
-            <div className={styles.empresa_page}>
-                <h1 className={styles.title_empresa}>Ensaios</h1>
+        <div className={styles.ensaio_all} >
+            <div className={styles.ensaio_page}>
+                <h1 className={styles.title_ensaio}>Ensaios</h1>
                 <Gallery category="ensaios"/>
             </div>
         </div>

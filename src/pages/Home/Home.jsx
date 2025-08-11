@@ -12,9 +12,9 @@ import Gallery from "../../components/Gallery/Gallery";
 const Home = () => {
 
 useLayoutEffect(() =>{
-    const elementsToAnimate = gsap.utils.toArray(
-        `.${styles.about}, .${styles.sectionGallery}> div, .${styles.contact_section}`
-    )
+    const elementsToAnimate = gsap.utils.toArray(`.${styles.bio_section} > *`);
+
+
     gsap.set(elementsToAnimate, {
         x: -200,
         autoAlpha: 0,
@@ -27,7 +27,7 @@ useLayoutEffect(() =>{
         delay: 0.5,
         stagger: 0.2,
         ease: "power2.out"
-    })
+    }), [];
 
     
 })

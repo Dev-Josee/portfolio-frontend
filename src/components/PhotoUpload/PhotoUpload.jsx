@@ -127,7 +127,7 @@ const PhotoUpload = ({ onUpload }) => {
                 {isUploading ? (
                     <Loader />
                 ) : (
-                    <Button type="submit" disabled={isUploading}>Enviar</Button>
+                    <Button className={styles.btnsend} type="submit" disabled={isUploading}>Enviar</Button>
                 )}
             </form>
         </div>
