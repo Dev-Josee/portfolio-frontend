@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
+const PhotoItem = ({ photo, onPhotoDelete, showDelete, onPhotoClick }) => {
 
 
    
@@ -67,6 +67,8 @@ const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
             }
         }
     }
+
+
     return (
         <div className={styles.photo_item} ref={photoRef}>
             <div className={styles.photo_wrapper}>
@@ -74,6 +76,7 @@ const PhotoItem = ({ photo, onPhotoDelete, showDelete }) => {
                     src={`${API_URL}${photo.imageUrl}`}
                     alt={photo.title || 'Foto sem titulo'}
                     loading="lazy"
+                    onClick={onPhotoClick}
                     onError={(e) => {
                         console.error("Erro ao carregar imagem:", e.target.src);
                     }}

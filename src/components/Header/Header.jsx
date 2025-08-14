@@ -8,15 +8,15 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.header_container}>
                 <h1 className={styles.logo}>Feedih</h1>
-                <nav className={styles.nav}>
+            <nav className={styles.nav}>
 
-                    <Link to="/" className={styles.nav_link}>Home</Link>
+                <Link to="/" className={styles.nav_link}>Home</Link>
 
-                    <Link to="/events" className={styles.nav_link}>Eventos</Link>
+                <Link to="/events" className={styles.nav_link}>Eventos</Link>
 
-                    <Link to="/ensaios" className={styles.nav_link}>Ensaios</Link>
+                <Link to="/ensaios" className={styles.nav_link}>Ensaios</Link>
 
-                </nav>
+            </nav>
             </div>
         </header>
     )

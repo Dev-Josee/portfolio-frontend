@@ -3,15 +3,15 @@
    height: 100%;
     position: relative;
     top: 1rem;
-    
     padding: 0 0.4rem;
+    
 }
 .bio_viewer p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 2.2rem;
     color: var(--text-color-p);
     font-family: Helvetica;
-    letter-spacing: -1px;
-    text-align: left;
+    letter-spacing: -1.2px;
+    text-align: justify;
     
 }   

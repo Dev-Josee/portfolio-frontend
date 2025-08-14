@@ -37,6 +37,7 @@
     font-weight: bold;
     letter-spacing: -1px;
     color: var(--text-color-p);
+    margin-top: 6rem;
 }
 
 .gradient_bord {
@@ -47,10 +48,10 @@
     width: 100%;
     height: 100%;
     background-image: url(../../assets/img/perfil.jpg);
-    
+
     background-size: cover;
     background-position: center;
-   
+
     background-repeat: no-repeat;
 }
 
@@ -59,7 +60,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     /* gradiente apenas no rodapé */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.963), transparent);
     pointer-events: none;
@@ -67,7 +68,7 @@
 
 .sectionGallery {
     width: 100%;
-    
+
     display: flex;
     flex-direction: column;
     position: relative;
@@ -87,31 +88,127 @@
 
 }
 
-.sectionGallery h3 {
+.gallery_title {
     font-size: 4rem;
     text-align: center;
 
-    font-family: "Parisienne", cursive;
+    font-family: Helvetica;
     padding: 1.6rem 0;
     letter-spacing: 2px;
     line-height: 2;
-    color: transparent;
-    background: linear-gradient(75deg, #fce87b, #b88b1b, #8f6805);
+    color: var(--text-color-p);
 
-    -webkit-background-clip: text;
-
-    background-clip: text;
-
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
 
-.sectionGallery p{
+.sectionGallery p {
     color: white;
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: -0.8px;
     padding: 0 0.6rem;
+}
+
+
+
+@media (min-width:1280px) {
+    .gradient_bord {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 110vh;
+        background-image: url(../../assets/img/perfil.jpg);
+        background-size: cover;
+
+        background-repeat: no-repeat;
+    }
+
+    .about {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        padding: 0 6rem;
+        display: flex;
+        flex-direction: column;
+
+        z-index: 2;
+    }
+
+    .about h3 {
+        text-align: center;
+        font-size: 6rem;
+        padding: 0 6rem;
+        margin-top: 15rem;
+
+    }
+
+    .about p {
+        font-size: 1.4rem;
+        padding: 0 6rem;
+        text-align: justify;
+    }
+
+    .bio_section {
+        margin-bottom: 15rem;
+    }
+}
+
+@media (min-width:1366px){
+     .gradient_bord {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 180vh;
+        background-image: url(../../assets/img/perfil.jpg);
+        background-size: cover;
+
+        background-repeat: no-repeat;
+    }
+
+      .bio_section {
+        margin-bottom: 10rem;
+    }
+
+      .about {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        padding: 0 6rem;
+        display: flex;
+        flex-direction: column;
+
+        z-index: 2;
+    }
+
+    .about h3 {
+        text-align: center;
+        font-size: 6rem;
+        padding: 0 6rem;
+        margin-top: 15rem;
+
+    }
+
+    .about p {
+        font-size: 1.4rem;
+        padding: 0 6rem;
+        text-align: justify;
+    }
+
+    .sectionGallery {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 30rem;
+        z-index: 100000;
+}
+
+ 
 }
