@@ -2,7 +2,6 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import { getPhotosByCategory } from "../../api";
 import PhotoItem from "./PhotoItem";
 import gsap from "gsap";
-import gsap from "gsap";
 import Pagination from "../common/Pagination";
 import LottieScreen from "../../components/common/LoaderScreen.jsx";
 import ErrorMessage from "../common/ErrorMessage";
