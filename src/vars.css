@@ -1,11 +1,18 @@
 :root {
     --bg-color--global: #1a1a1a;
-    --bg-color-header:#EBE1CF; /*branco neve*/
+    --bg-color-header:#e0c7b8;; /*branco neve*/
     --bg-color-about: #E6D8C6 ; /*areia*/
     --bg-color-galery:#654321; /*verde escuro*/
     --bg-color-galery2:#B35F47; /*terra cota*/
     --text-color-p: #f0f0f0;
     --btn-color: #CD853F;/*cobre dourado*/
     --text-color--global: linear-gradient(75deg, to right, #AE8625, #F7EF8A #D2AC47 #EDC967);
+
+   
+    --bp-lg: 1280px;
+    --bp-xl: 1366px;
+    --bp-xxl: 1920px;
+
+
 
 }

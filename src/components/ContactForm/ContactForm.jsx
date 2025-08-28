@@ -3,8 +3,11 @@ import styles from "./ContactForm.module.css";
 import Button from "../common/Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ErrorMessage from "../common/ErrorMessage";
 
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactForm = () => {

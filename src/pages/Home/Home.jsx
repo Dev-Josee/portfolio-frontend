@@ -55,12 +55,12 @@ useLayoutEffect(() =>{
             </section>
 
             <section className={styles.sectionGallery}>
-                <div>
+                <div className={styles.gallery_title}>
                     <h3>Portfólio</h3>
                     <p>Uma seleção dos meus trabalhos mais marcantes, capturando a beleza em diferentes cenários e momentos únicos.</p>
                     <Gallery category="events" />
                 </div>
-                <div>
+                <div className={styles.gallery_title}>
                     <h3>Ensaios</h3>
                     <p>Ensaios especiais que contam histórias através de imagens, criando memórias que durarão para sempre.</p>
                     <Gallery category="ensaios" />
