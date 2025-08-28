@@ -1,11 +1,11 @@
 import React, { useLayoutEffect } from "react";
 
-import BioViewer from "../../components/Bioviewer/BioViewer"
+import BioViewer from '../../components/Bioviewer/BioViewer'
 import ContactForm from '../../components/ContactForm/ContactForm';
-import styles from "./Home.module.css";
+import styles from './Home.module.css';
 
-import gsap from "gsap";
-import Gallery from "../../components/Gallery/Gallery";
+import gsap from 'gsap';
+import Gallery from '../../components/Gallery/Gallery';
 
 
 
