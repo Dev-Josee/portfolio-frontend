@@ -9,8 +9,7 @@ const Admin = () => {
 
     return (
         <div className={styles.admin_page}>
-            <h1>Painel</h1>
-
+           
             <h2>Editar sua bio
 
             </h2>

@@ -7,11 +7,29 @@
     
 }
 .bio_viewer p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2.2rem;
     color: var(--text-color-p);
     font-family: Helvetica;
-    letter-spacing: -1.2px;
+    letter-spacing: -.2px;
     text-align: justify;
     
 }   
+
+@media (min-width:768px) {
+
+    .bio_viewer p {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        text-align: center;
+    }
+}
+
+@media (min-width:1366px){
+    .bio_viewer p {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        width: 60%;
+        margin: 0 auto;
+    }
+}

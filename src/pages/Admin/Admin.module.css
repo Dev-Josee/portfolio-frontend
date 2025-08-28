@@ -8,15 +8,7 @@
     justify-content: center;
 
 }
-.admin_page h1{
-    color: var(--text-color-p);
-    font-size: 3rem;
-    text-align: center;
-    padding: 1rem 0;
-    font-family: Helvetica;
-    letter-spacing: -1.2px;
-    margin-bottom: 2rem;
-}
+
 .admin_page h2{
     color: var(--text-color-p);
     font-size: 2rem;
@@ -45,4 +37,16 @@
     padding: 1rem 0;
     margin-top: 5rem;
     
+}
+
+
+@media (min-width:1366px) {
+    .admin_page{
+        padding: 0 15rem;
+    }
+
+    .admin_page h2{
+        padding: 6rem 0;
+        text-align: center;
+    }
 }

@@ -1,58 +1,55 @@
-@import '../../vars.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Parisienne&family=Tangerine&display=swap');
-
-
+/* =====================
+   Estilos base (mobile)
+===================== */
 .home_page {
     width: 100%;
-    height: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
 }
 
 .bio_section {
     width: 100%;
-    height: 58rem;
+    height: 100vh;
+    /* deixa mais fluido no mobile */
     padding: 0 0.4rem;
     display: flex;
-    position: relative;
     flex-direction: column;
+    position: relative;
+
 }
 
 .about {
     width: 100%;
-    height: 100%;
-    position: relative;
+    margin-top: 50vh;
+
     display: flex;
     flex-direction: column;
-    margin-top: 20rem;
-
+    position: relative;
     z-index: 2;
 }
 
 .about h3 {
-    text-align: start;
-    font-size: 6rem;
+    text-align: center;
+    font-size: 2.6rem;
+    /* menor no mobile */
     font-weight: bold;
-    letter-spacing: -1px;
+    letter-spacing: 11px;
     color: var(--text-color-p);
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 
 .gradient_bord {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     width: 100%;
     height: 100%;
     background-image: url(../../assets/img/perfil.jpg);
-
     background-size: cover;
     background-position: center;
-
     background-repeat: no-repeat;
+    z-index: 1;
 }
 
 .gradient_overlay {
@@ -60,155 +57,128 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    /* gradiente apenas no rodapé */
+    height: 120%;
+
     background: linear-gradient(to top, rgba(0, 0, 0, 0.963), transparent);
     pointer-events: none;
 }
 
 .sectionGallery {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 1.2rem;
-    margin-bottom: 4rem;
+    padding: 1rem 0;
+    margin-top: 5%;
+    background-color: transparent;
 
 }
 
-.contac_section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    margin-top: 1.2rem;
-    padding: 0 1rem;
-
-}
-
-.gallery_title {
-    font-size: 4rem;
+.gallery_title h3 {
+    font-size: 2.4rem;
+    font-weight: bold;
     text-align: center;
-
     font-family: Helvetica;
-    padding: 1.6rem 0;
-    letter-spacing: 2px;
-    line-height: 2;
+    letter-spacing: -1px;
     color: var(--text-color-p);
-
-
+    margin-top: 2rem;
 }
 
-.sectionGallery p {
-    color: white;
+.gallery_title p {
+    font-size: 0.8rem;
+    padding: 0 1rem;
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: -0.8px;
-    padding: 0 0.6rem;
+    font-family: Helvetica;
+    color: var(--text-color-p);
+    margin-top: 0.5rem;
 }
 
-
-
-@media (min-width:1280px) {
-    .gradient_bord {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        height: 110vh;
-        background-image: url(../../assets/img/perfil.jpg);
-        background-size: cover;
-
-        background-repeat: no-repeat;
-    }
-
+/* ====== Tablet / Medium ====== */
+@media (min-width:768px) {
     .about {
-        width: 100%;
-        height: 400px;
-        position: relative;
-        padding: 0 6rem;
-        display: flex;
-        flex-direction: column;
-
-        z-index: 2;
+        margin-top: 85%;
     }
 
     .about h3 {
-        text-align: center;
-        font-size: 6rem;
-        padding: 0 6rem;
-        margin-top: 15rem;
-
+        font-size: 3.6rem;
     }
 
-    .about p {
-        font-size: 1.4rem;
-        padding: 0 6rem;
-        text-align: justify;
+    .gallery_title h3 {
+        font-size: 3rem;
     }
 
-    .bio_section {
-        margin-bottom: 15rem;
+    .gallery_title p {
+        font-size: 1rem;
     }
+
 }
 
-@media (min-width:1366px){
-     .gradient_bord {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        height: 180vh;
-        background-image: url(../../assets/img/perfil.jpg);
-        background-size: cover;
+/* ===== Notebook / Medium ===== */
 
-        background-repeat: no-repeat;
-    }
-
-      .bio_section {
-        margin-bottom: 10rem;
-    }
-
-      .about {
-        width: 100%;
-        height: 400px;
-        position: relative;
-        padding: 0 6rem;
-        display: flex;
-        flex-direction: column;
-
-        z-index: 2;
+@media (min-width:960px) {
+    .about {
+        margin-top: 70%;
     }
 
     .about h3 {
-        text-align: center;
-        font-size: 6rem;
-        padding: 0 6rem;
-        margin-top: 15rem;
-
+        font-size: 4.6rem;
     }
 
-    .about p {
+    .gallery_title h3 {
+        font-size: 4rem;
+    }
+
+    .gallery_title p {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* ===== Desktop / Large ===== */
+
+@media (min-width:1200px) {
+    .about {
+        margin-top: 55%;
+    }
+
+    .about h3 {
+        font-size: 5.6rem;
+    }
+
+    .gallery_title h3 {
+        font-size: 5rem;
+    }
+
+    .gallery_title p {
         font-size: 1.4rem;
-        padding: 0 6rem;
-        text-align: justify;
     }
 
-    .sectionGallery {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 30rem;
-        z-index: 100000;
 }
 
- 
+/* ====== Desktop / XL ====*/
+
+@media (min-width:1366px) {
+    .about {
+        margin-top: 50%;
+    }
+
+    .about h3 {
+        font-size: 6.6rem;
+    }
+    
+
+    .gradient_bord {
+        height: 170vh;
+    }
+
+    .gallery_title h3 {
+        font-size: 6rem;
+    }
+
+    .gallery_title p {
+        font-size: 1.6rem;
+    }
+
+    .sectionGallery{
+        margin-top: 50%;
+        z-index: 1000;
+    }
+
 }
+

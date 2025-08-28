@@ -15,13 +15,13 @@
 .bio_text {
     width: 100%;
     text-align: justify;
-    
+
 
 }
 
 .bio_text textarea {
     width: 100%;
-    
+
     background-color: var(--bg-color-about);
     color: var(--text-color--global);
     font-size: 1rem;
@@ -47,8 +47,8 @@
     line-height: 1.1;
 }
 
-.btns{
-    
+.btns {
+
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -56,17 +56,47 @@
     align-items: center;
 }
 
-.btnsave, .btncancel{
+.btnsave,
+.btncancel {
     width: 220px;
     padding: 12px;
 }
-.btnedit{
-     width: 220px;
+
+.btnedit {
+    width: 220px;
     padding: 12px;
     margin-top: 1.4rem;
     transition: all 0.3s ease-in-out;
 }
 
-.btnedit:hover{
+.btnedit:hover {
     transform: scale(1.1);
+}
+
+
+@media (min-width:1336px) {
+    .bio_editor {
+        padding: 0 4rem;
+
+    }
+
+    .bio_atual {
+
+        width: 100%;
+        height: 100%;
+        padding: 5rem 2rem;
+
+    }
+
+    .bio_atual p {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .btnedit {
+        display: flex;
+        margin-top: 6rem;
+    }
+
 }
