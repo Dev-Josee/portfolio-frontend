@@ -73,7 +73,7 @@ const PhotoItem = ({ photo, onPhotoDelete, showDelete, onPhotoClick }) => {
         <div className={styles.photo_item} ref={photoRef}>
             <div className={styles.photo_wrapper}>
                 <img
-                    src={`${API_URL}${photo.imageUrl}`}
+                    src={`https://portfolio-backend-4vtp.onrender.com${photo.imageUrl}`}
                     alt={photo.title || 'Foto sem titulo'}
                     loading="lazy"
                     onClick={onPhotoClick}
