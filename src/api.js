@@ -34,7 +34,7 @@ export const getPhotosByCategory = async (category, page = 1, limit = 10) => {
 
 
 
-export const deletePhoto = (id) => api.delete(`/api/photos/${id}`);
+export const deletePhoto = (id) => api.delete(`/photos/${id}`);
 
 
 export default api;
