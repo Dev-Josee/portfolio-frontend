@@ -12,8 +12,9 @@ const PhotoUpload = ({ onUpload }) => {
         description: '',
         category: 'events'
     });
-    const [file, setFile] = useState(null);
-    const [preview, setPreview] = useState('');
+    // Corrigido: Usando estados para múltiplos arquivos
+    const [files, setFiles] = useState([]);
+    const [previews, setPreviews] = useState([]);
     const [isUploading, setIsUploading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -23,53 +24,57 @@ const PhotoUpload = ({ onUpload }) => {
             ...prev,
             [name]: value
         }));
-    }
+    };
 
     const handleFileChange = (e) => {
-        const selectedFile = e.target.files[0];
-        if (selectedFile) {
-            setFile(selectedFile);
-            setPreview(URL.createObjectURL(selectedFile));
+        const selectedFiles = Array.from(e.target.files);
+        if (selectedFiles.length > 0) {
+            setFiles(selectedFiles);
+            const newPreviews = selectedFiles.map(file => URL.createObjectURL(file));
+            setPreviews(newPreviews);
             setError('');
         }
-    }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-    console.log('Arquivo selecionado:', file);
-    console.log('Dados do formulário:', formData);
-
-        if (!file) {
-            setError('Por favor, selecione uma imagem');
+        // Corrigido: Validação de arquivos
+        if (files.length === 0) {
+            setError('Por favor, selecione pelo menos uma foto.');
             return;
         }
 
-        const formDataToSend = new FormData();
-        formDataToSend.append('title', formData.title);
-        formDataToSend.append('description', formData.description);
-        formDataToSend.append('category', formData.category);
-        formDataToSend.append('photo', file);
-
+        setIsUploading(true);
+        setError(null);
+        
         try {
-            setIsUploading(true);
-            setError('');
-            await uploadPhoto(formDataToSend);
-            alert('Foto enviada com sucesso!');
-            onUpload(); // Chama a função de callback após o upload
-            // Reset form
+            // Corrigido: Iterando sobre cada arquivo para upload
+            for (const file of files) {
+                const formDataToSend = new FormData();
+                formDataToSend.append('photo', file); // 'photo' precisa corresponder ao Multer no backend
+                formDataToSend.append('title', formData.title);
+                formDataToSend.append('description', formData.description);
+                formDataToSend.append('category', formData.category);
+                
+                await uploadPhoto(formDataToSend);
+            }
+
+            // Resetar formulário e estados após o upload
             setFormData({ title: '', description: '', category: 'events' });
-            setFile(null);
-            setPreview('');
-            e.target.reset();
+            setFiles([]);
+            setPreviews([]);
+            onUpload(); // Chama o callback para atualizar a galeria
+            alert('Fotos enviadas com sucesso!');
+            
         } catch (err) {
-            setError('Erro ao enviar foto. Tente novamente.');
-            console.error(err);
+            console.error('Erro no upload:', err);
+            setError('Erro ao enviar as fotos. Tente novamente.');
         } finally {
             setIsUploading(false);
         }
-    }
-
+    };
+    
     return (
         <div className={styles.photo_upload}>
             <h3>Adicionar Nova Foto</h3>
@@ -105,7 +110,6 @@ const PhotoUpload = ({ onUpload }) => {
                     >
                         <option value="events">Eventos</option>
                         <option value="ensaios">Ensaios</option>
-                        
                     </select>
                 </div>
                 <div className={styles.form_group}>
@@ -113,15 +117,19 @@ const PhotoUpload = ({ onUpload }) => {
                     <input
                         type="file"
                         name="photo"
+                        multiple
                         onChange={handleFileChange}
                         accept="image/*"
                         disabled={isUploading}
                         required
                     />
                 </div>
-                {preview && (
-                    <div className={styles.preview}>
-                        <img src={preview} alt="Preview" />
+                {/* Corrigido: Usando `previews` para exibir a lista de pré-visualizações */}
+                {previews.length > 0 && (
+                    <div className={styles.previews}>
+                        {previews.map((preview, index) => (
+                            <img key={index} src={preview} alt={`Preview ${index}`} className={styles.previewImage} />
+                        ))}
                     </div>
                 )}
                 {isUploading ? (
