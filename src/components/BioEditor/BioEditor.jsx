@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { getBio, updateBio } from "../../api";
 import styles from "./BioEditor.module.css";
 
@@ -7,29 +6,23 @@ const BioEditor = () => {
 
     const [bio, setBio] = useState('');
     const [editMode, setEditMode] = useState(false);
-
-
  
-    useEffect(() => {
-        const fetchBio = async () => {
-            try {
-                const response = await getBio();
-                if (response.data && response.data.data) {
-                    setBio(response.data.data.content);
-                }
-            } catch (err) {
-                console.error('Erro ao buscar biografia:', err);
+    const fetchBio = async () => {
+        try {
+            const response = await getBio();
+            if (response.data && response.data.data) {
+                setBio(response.data.data.content);
             }
-        };
-    
+        } catch (err) {
+            console.error('Erro ao buscar biografia:', err);
+        }
+    };
+
+    useEffect(() => {
         fetchBio();
     }, []);
 
-  
-   
-
     const handleSave = async () => {
-
         console.log('Valor da biografia a ser enviado:', bio);
         try {
             await updateBio(bio);
@@ -63,11 +56,6 @@ const BioEditor = () => {
             )}
         </div>
     )
-}
-
-
-
-
-
+};
 
 export default BioEditor;
