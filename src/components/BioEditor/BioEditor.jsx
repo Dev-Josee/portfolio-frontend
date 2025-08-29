@@ -12,7 +12,7 @@ const BioEditor = () => {
     useEffect(() => {
         const fetchBio = async () => {
             try {
-                const response = await axios.get('/api/bio');
+                const response = await axios.get('/bio');
                 if (response.data && response.data.data) {
                     setBio(response.data.data.content);
                 }
@@ -29,7 +29,7 @@ const BioEditor = () => {
 
     const handleSave = async () => {
         try {
-            await axios.post('/api/bio', { content: bio });
+            await axios.post('/bio', { content: bio });
             setEditMode(false)
             fetchBio();
         } catch (err) {
