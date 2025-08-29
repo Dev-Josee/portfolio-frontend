@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from '../../../api';
 import styles from './LoginAdmin.module.css';
 
 
@@ -25,19 +26,8 @@ const LoginAdmin = () => {
         setMessage('Aguarde...');
 
         try {
-            const response = await fetch('http://localhost:5000/api/admin/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password
-                }),
-            });
-            const data = await response.json();
-
-            if (response.ok) {
+            const response = await api.post('/admin/login', { username, password });
+            if (response.status === 200) {
                 localStorage.setItem('accessToken', data.accessToken);
 
                 setMessage('Login realizado! Redirecionando...');
@@ -49,9 +39,8 @@ const LoginAdmin = () => {
             }
 
         } catch (error) {
-            console.error('Erro na requisição de login:', error);
-            setMessage('Erro ao conectar com o servidor. Tente novamente mais tarde.');
-
+            setMessage(response.data.message || 'Erro ao fazer login. Verifique suas credenciais.');
+            console.error('Erro ao fazer login:', response.data.message);
         }
 
     };
@@ -105,12 +94,12 @@ const LoginAdmin = () => {
                 <button type="submit" className={styles.button}>Entrar</button>
                 <a href="#esqueciminhasenha" className={styles.resetpsw}>Esqueci minha senha</a>
             </form>
-            </div >
-    
+        </div >
+
     )
 }
-    
 
-   
+
+
 
 export default LoginAdmin;
