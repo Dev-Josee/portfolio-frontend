@@ -14,7 +14,7 @@ const BioViewer = () => {
 
     const fetchBio = async () => {
         try {
-            const response = await axios.get('/api/bio');
+            const response = await axios.get('/bio');
             if(response.data && response.data.data) {
                 setBio(response.data.data.content)
             }
