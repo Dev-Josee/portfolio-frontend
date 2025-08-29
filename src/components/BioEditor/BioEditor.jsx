@@ -29,6 +29,8 @@ const BioEditor = () => {
    
 
     const handleSave = async () => {
+
+        console.log('Valor da biografia a ser enviado:', bio);
         try {
             await updateBio({ content: bio });
             setEditMode(false)
