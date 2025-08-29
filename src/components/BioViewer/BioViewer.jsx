@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { getBio } from "../../api";
 import styles from "./BioViewer.module.css";
 
 
@@ -14,7 +15,7 @@ const BioViewer = () => {
 
     const fetchBio = async () => {
         try {
-            const response = await axios.get('/bio');
+            const response = await getBio();
             if(response.data && response.data.data) {
                 setBio(response.data.data.content)
             }

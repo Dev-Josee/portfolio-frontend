@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { getBio, updateBio } from "../../api";
 import styles from "./BioEditor.module.css";
 
 const BioEditor = () => {
@@ -12,7 +13,7 @@ const BioEditor = () => {
     useEffect(() => {
         const fetchBio = async () => {
             try {
-                const response = await axios.get('/bio');
+                const response = await getBio();
                 if (response.data && response.data.data) {
                     setBio(response.data.data.content);
                 }
@@ -29,7 +30,7 @@ const BioEditor = () => {
 
     const handleSave = async () => {
         try {
-            await axios.post('/bio', { content: bio });
+            await updateBio({ content: bio });
             setEditMode(false)
             fetchBio();
         } catch (err) {
