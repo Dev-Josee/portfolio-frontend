@@ -107,7 +107,7 @@ const Gallery = ({ category, showDelete = false }) => {
             )}
             {fullScreenPhoto && (
                 <div className={styles.fullScreenOverlay} onClick={handleClosedFullScreen}>
-                    <img ssrc={`https://portfolio-backend-4vtp.onrender.com${fullScreenPhoto}`}
+                    <img src={`https://portfolio-backend-4vtp.onrender.com${fullScreenPhoto}`}
                         className={styles.fullScreenImage}
                         alt=""
                     />
