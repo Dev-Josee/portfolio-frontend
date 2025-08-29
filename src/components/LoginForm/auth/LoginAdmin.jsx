@@ -20,30 +20,38 @@ const LoginAdmin = () => {
     }
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        setMessage('Aguarde...');
+    setMessage('Aguarde...');
 
-        try {
-            const response = await api.post('/admin/login', { username, password });
-            if (response.status === 200) {
-                localStorage.setItem('accessToken', data.accessToken);
+    try {
+        const response = await api.post('/admin/login', { username, password });
+        
+        // CORREÇÃO: Acesse os dados diretamente de response.data
+        if (response.status === 200) {
+            localStorage.setItem('accessToken', response.data.accessToken);
 
-                setMessage('Login realizado! Redirecionando...');
-                navigate('/admin');
-                console.log("Token armazenado:", data.accessToken);
-            } else {
-                setMessage(data.message || 'Erro ao fazer login. Verifique suas credenciais.');
-                console.error('Erro ao fazer login:', data.message);
-            }
-
-        } catch (error) {
+            setMessage('Login realizado! Redirecionando...');
+            navigate('/admin');
+            console.log("Token armazenado:", response.data.accessToken);
+        } else {
             setMessage(response.data.message || 'Erro ao fazer login. Verifique suas credenciais.');
             console.error('Erro ao fazer login:', response.data.message);
         }
 
-    };
+    } catch (error) {
+        // CORREÇÃO: Para erros do Axios, a resposta está em error.response
+        if (error.response) {
+            setMessage(error.response.data.message || 'Erro ao fazer login. Verifique suas credenciais.');
+            console.error('Erro ao fazer login:', error.response.data);
+        } else {
+            // Se o erro não for uma resposta do servidor (ex: erro de rede)
+            console.error('Erro na requisição de login:', error);
+            setMessage('Erro ao conectar com o servidor. Tente novamente mais tarde.');
+        }
+    }
+};
 
 
     return (
