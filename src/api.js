@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_URL =  'https://portfolio-backend-4vtp.onrender.com';
+export const API_URL =  'https://portfolio-backend-4vtp.onrender.com/api';
 
 const api = axios.create({
     baseURL: API_URL,
