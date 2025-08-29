@@ -32,7 +32,7 @@ const BioEditor = () => {
 
         console.log('Valor da biografia a ser enviado:', bio);
         try {
-            await updateBio({ content: bio });
+            await updateBio(bio);
             setEditMode(false)
             fetchBio();
         } catch (err) {
